@@ -20,3 +20,6 @@ class Jobs(SqlAlchemyBase):
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id"))
     user = orm.relation('User')
+
+    def __repr__(self):
+        return f'<Job> {self.job}'
