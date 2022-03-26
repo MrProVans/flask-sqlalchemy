@@ -49,11 +49,22 @@ def main():
     # user3.speciality = "mars driver"
     # user3.address = "module_5"
     # user3.email = "drive_live_gon@mars.org"
+    #
+    # db_sess.add(user3)
+    # db_sess.add(user2)
+    # db_sess.add(user1)
+    # db_sess.add(user)
+    # db_sess.commit()
 
-    db_sess.add(user3)
-    db_sess.add(user2)
-    db_sess.add(user1)
-    db_sess.add(user)
+    job = Jobs(user_id=1)
+    job.team_leader = 1
+    job.job = 'deployment of residential modules 1 and 2'
+    job.work_size = 15
+    job.collaborators = '2, 3'
+    # job.start_date
+    job.is_finished = False
+
+    db_sess.add(job)
     db_sess.commit()
 
 
